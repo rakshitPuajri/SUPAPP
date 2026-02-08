@@ -9,3 +9,7 @@ dist
 build
 .next
 out
+node_modules/
+.env
+.env.local
+.DS_Store

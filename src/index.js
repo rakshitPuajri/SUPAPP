@@ -8,7 +8,7 @@ dotenv.config({
 const PORT = process.env.PORT || 3001;
 try {
   app.listen(PORT, () => {
-    console.log(`Backend running on http://localhost:${PORT}`);
+    console.log(`Server running on http://localhost:${PORT}`);
   });
 } catch (err) {
   console.log("App failed to start");
