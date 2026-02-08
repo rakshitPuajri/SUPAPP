@@ -1,9 +1,13 @@
 import { app } from './app.js';
 import dotenv from 'dotenv';
 
-dotenv.config({
-    path: './.env'
-});
+try {
+    dotenv.config({
+        path: './.env'
+    });
+} catch (err) {
+    console.log('No .env file found, using environment variables');
+}
 
 const PORT = process.env.PORT || 3001;
 try {
