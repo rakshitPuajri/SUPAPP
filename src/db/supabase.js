@@ -2,16 +2,16 @@ import { createClient } from '@supabase/supabase-js'
 import 'dotenv/config'
 
 
-const superbaseUrl = process.env.SUPABASE_URL;
-const superbaseKey = process.env.SUPABASE_ANON_KEY
+const supabaseUrl = process.env.SUPABASE_URL;
+const supabaseKey = process.env.SUPABASE_KEY || process.env.SUPABASE_ANON_KEY
 
 // create client 
-const supabase = createClient(superbaseUrl,superbaseKey);
+const supabase = createClient(supabaseUrl, supabaseKey);
 
-if (!superbaseUrl || !superbaseKey) {
+if (!supabaseUrl || !supabaseKey) {
   throw new Error('Supabase env variables missing')
-}else{
-  console.log(`DB conneccted`);
-};
+} else {
+  console.log(`DB connected`);
+}
 
 export { supabase };
