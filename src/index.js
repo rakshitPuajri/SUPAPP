@@ -1,0 +1,15 @@
+import { app } from './app.js';
+import dotenv from 'dotenv';
+
+dotenv.config({
+    path: './.env'
+});
+
+const PORT = process.env.PORT || 3001;
+try {
+  app.listen(PORT, () => {
+    console.log(`Backend running on http://localhost:${PORT}`);
+  });
+} catch (err) {
+  console.log("App failed to start");
+}
